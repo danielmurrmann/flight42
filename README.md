@@ -1,0 +1,3 @@
+# Angular Workshops Sample Project
+
+This repository contains a sample project for Angular workshops conducted by Angular Architects and Fancy Development.
