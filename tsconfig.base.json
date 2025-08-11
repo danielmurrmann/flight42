@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@flight42/shared-ui-design-system": [
+        "frontend/libs/shared/ui-design-system/src/index.ts"
+      ],
+      "@flight42/shared-ui-design-system-blocks": [
+        "frontend/libs/shared/ui-design-system-blocks/src/index.ts"
+      ],
+      "@flight42/shared-ui-design-system-elements": [
+        "frontend/libs/shared/ui-design-system-elements/src/index.ts"
+      ],
+      "@flight42/shared-ui-design-system-layouts": [
+        "frontend/libs/shared/ui-design-system-layouts/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

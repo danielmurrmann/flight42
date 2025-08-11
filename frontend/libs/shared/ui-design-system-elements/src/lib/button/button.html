@@ -1,0 +1,8 @@
+<button 
+    class="button"
+    [disabled]="disabled()"
+    [class.primary]="type() === 'primary'" 
+    [class.secondary]="type() === 'secondary'"
+    (click)="tap.emit($event)">
+    {{label()}}
+</button>

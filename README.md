@@ -11,4 +11,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 110 - Motivation and Foundation
 
 ## Topic
-111 - Motivation for Design Systems and Component Libraries
+112 - Monorepos as a Foundation for Component Libraries
