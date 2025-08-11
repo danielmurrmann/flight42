@@ -15,6 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@flight42/flight-domain": ["frontend/libs/flight/domain/src/index.ts"],
+      "@flight42/flight-ui-design-system-blocks": [
+        "frontend/libs/flight/ui-design-system-blocks/src/index.ts"
+      ],
+      "@flight42/flight-ui-design-system-elements": [
+        "frontend/libs/flight/ui-design-system-elements/src/index.ts"
+      ],
       "@flight42/shared-ui-design-system": [
         "frontend/libs/shared/ui-design-system/src/index.ts"
       ],
