@@ -6,3 +6,7 @@ This repository contains a sample project for Angular workshops conducted by Ang
 
 ## Training
 100 - Design Systems and Angular Component Libraries
+
+## Chapter
+110 - Motivation and Foundation
+
