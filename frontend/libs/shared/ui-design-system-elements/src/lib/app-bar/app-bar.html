@@ -1,0 +1,12 @@
+<div class="app-bar">
+    <span class="title">{{title()}}</span>
+    <div class="items">
+        @for(item of items(); track $index) {
+            @switch (item.type) {
+              @case ('action') {
+                <ds-app-bar-action [iconName]="item.iconName" (tap)="item.tap($event)" />
+              }
+            }
+        }
+    </div>
+</div>

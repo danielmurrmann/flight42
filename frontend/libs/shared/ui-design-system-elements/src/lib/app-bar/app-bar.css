@@ -1,0 +1,20 @@
+.app-bar {
+    padding: var(--element-space);
+    background-color: var(--secondary-block-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    border-bottom: 1px solid var(--secondary-color-light);
+}
+
+.app-bar .title {
+    font-weight: 500;
+    margin-left: var(--block-space);
+}
+
+.app-bar .items {
+    margin-right: var(--block-space);
+    display: flex;
+    gap: var(--element-space);
+}
