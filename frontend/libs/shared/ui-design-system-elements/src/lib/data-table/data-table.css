@@ -1,0 +1,37 @@
+.data-table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.data-table thead {
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--primary-color-light);
+}
+
+.data-table tr {
+    border-bottom: 1px solid var(--secondary-color-light);
+}
+
+.data-table tr:last-child {
+    border-bottom: none;
+}
+
+.data-table tr.selected {
+    background-color: var(--secondary-color-light);
+}
+
+.data-table tr.selectable {
+    cursor: pointer;
+}
+
+.data-table th {
+    padding: var(--element-space);
+}
+
+.data-table td {
+    padding: var(--element-space);
+}
+

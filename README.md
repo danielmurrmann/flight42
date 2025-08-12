@@ -11,4 +11,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 120 - Architectural Considerations for Component Libraries
 
 ## Topic
-122 - Custom Form Controls
+123 - Components based on Content Projection
