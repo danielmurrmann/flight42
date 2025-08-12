@@ -4,7 +4,7 @@
   "sourceRoot": "frontend/libs/shared/ui-design-system/src",
   "prefix": "ds",
   "projectType": "library",
-  "tags": [],
+  "tags": ["type:ui"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",

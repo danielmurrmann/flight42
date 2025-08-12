@@ -4,7 +4,7 @@
   "sourceRoot": "frontend/libs/flight/domain/src",
   "prefix": "lib",
   "projectType": "library",
-  "tags": [],
+  "tags": ["type:domain", "domain:flight"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
