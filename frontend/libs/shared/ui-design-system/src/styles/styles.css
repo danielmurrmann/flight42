@@ -1,0 +1,10 @@
+@import './design-tokens/baseline.css';
+@import './design-tokens/colors.css';
+@import './design-tokens/spaces.css';
+
+@import './themes/dark.css';
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}

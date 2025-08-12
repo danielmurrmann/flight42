@@ -9,3 +9,6 @@ This repository contains a sample project for Angular workshops conducted by Ang
 
 ## Chapter
 120 - Architectural Considerations for Component Libraries
+
+## Topic
+121 - Design Tokens and Theming

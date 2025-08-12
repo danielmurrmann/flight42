@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Button } from '@flight42/shared-ui-design-system-elements';
+import { Theme } from '@flight42/shared-ui-design-system';
 
 @Component({
   imports: [Button],
@@ -9,4 +10,5 @@ import { Button } from '@flight42/shared-ui-design-system-elements';
 })
 export class App {
   protected title = 'design-system playground';
+  theme = inject(Theme);
 }

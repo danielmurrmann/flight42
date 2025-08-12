@@ -3,5 +3,5 @@
 <hr>
 
 <h2>Button Component</h2>
-<ds-button label="Set Dark Theme"/>
-
+<ds-button label="Set Dark Theme" (click)="theme.setTheme('dark')"/>
+<ds-button label="Reset Theme" type="secondary" (click)="theme.resetTheme()"/>

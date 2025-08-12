@@ -1,0 +1,30 @@
+.button {
+    padding: var(--element-space);
+    border: none;
+}
+
+.primary {
+    background-color: var(--primary-color);
+    color: var(--text-on-primary-color);
+}
+
+.primary:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.primary:disabled {
+    background-color: var(--primary-color-light);
+}
+
+.secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-on-secondary-color);
+}
+
+.secondary:hover {
+    background-color: var(--secondary-color-dark);
+}
+
+.secondary:disabled {
+    background-color: var(--secondary-color-light);
+}

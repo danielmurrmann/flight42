@@ -1,0 +1,9 @@
+:root {
+    --icon-size: 15px;
+    --element-space: 8px;
+    --block-space: 10px;
+
+    --font-size-smaller: 12px;
+    --font-size: 15px;
+    --font-size-larger: 20px;
+}
