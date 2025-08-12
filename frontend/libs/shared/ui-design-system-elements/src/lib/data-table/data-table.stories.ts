@@ -3,6 +3,7 @@ import { argsToTemplate } from '@storybook/angular';
 import { DataTable } from "./data-table";
 import { DataTableStringItem } from "./data-table-string-item";
 import { DataTableDateItem } from "./data-table-date-item";
+import { DataTableSuccessItem } from "./data-table-success-item";
 
 const testData = [{
         id: 1,
@@ -36,12 +37,14 @@ const meta: Meta<DataTable> = {
     subcomponents: {
       DataTableStringItem, 
       DataTableDateItem,
+      DataTableSuccessItem
     },
     decorators: [
         moduleMetadata({ imports: [
           DataTable, 
           DataTableStringItem, 
           DataTableDateItem,
+          DataTableSuccessItem
         ]})
       ],
     tags: ['autodocs'],
@@ -74,4 +77,19 @@ export const WithDateItem: Story = {
           </ds-data-table>
         `
       })
+};
+
+export const WithDateAndSuccessItem: Story = {
+  render: (args) => ({
+      props: args,
+      template:`
+        <ds-data-table ${argsToTemplate(args)}>
+          <ds-data-table-string-item label="ID" key="id" />
+          <ds-data-table-string-item label="From" key="from" />
+          <ds-data-table-string-item label="To" key="to" />
+          <ds-data-table-date-item label="Date" key="date" />
+          <ds-data-table-success-item label="On Time" key="onTime" />
+        </ds-data-table>
+      `
+    })
 };

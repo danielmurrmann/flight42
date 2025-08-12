@@ -32,3 +32,16 @@ export const WithActions: Story = {
         ]
     }
 }
+
+export const WithActionsAndSearch: Story = {
+    args: {
+        ...TitleOnly.args,
+        items: [
+            { type: 'search', placeholder: 'Search for...', executeSearch: () => undefined },
+            { type: 'action', iconName: 'matHomeOutline', tap: () => undefined },
+            { type: 'action', iconName: 'matRestorePageOutline', tap: () => undefined },
+            { type: 'action', iconName: 'matSettingsOutline', tap: () => undefined },
+        ]
+    }
+}
+

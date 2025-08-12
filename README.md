@@ -11,4 +11,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 120 - Architectural Considerations for Component Libraries
 
 ## Topic
-124 - Components based on Configuration
+125 - Extending Components: Content Projection vs. Configuration Approach

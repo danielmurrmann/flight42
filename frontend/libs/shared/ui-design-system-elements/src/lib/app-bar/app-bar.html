@@ -6,6 +6,9 @@
               @case ('action') {
                 <ds-app-bar-action [iconName]="item.iconName" (tap)="item.tap($event)" />
               }
+              @case ('search') {
+                <ds-app-bar-search [placeholder]="item.placeholder" (executeSearch)="item.executeSearch($event)" />
+              }
             }
         }
     </div>
