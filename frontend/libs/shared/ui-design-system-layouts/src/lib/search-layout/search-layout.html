@@ -1,0 +1,17 @@
+<div class="search-layout">
+  <ds-app-bar class="sticky-app-bar" [title]="title()" [items]="_appBarItems()" />
+
+  <div class="content">
+    <div class="main-area">
+      <div class="search-criteria">
+        <ng-content select="[search-criteria]" />
+      </div>
+      <div class="search-result">
+        <ng-content select="[search-result]" />
+      </div>
+    </div>
+    <div class="side-panel">
+      <ng-content select="[side-panel]" />
+    </div>
+  </div>
+</div>

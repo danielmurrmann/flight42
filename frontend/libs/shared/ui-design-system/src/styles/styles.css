@@ -8,3 +8,19 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
+
+body.sb-main-padded {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+storybook-root {
+  height: 100%;
+}
+
+div#storybook-root {
+  height: 100%;
+}

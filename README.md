@@ -11,4 +11,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 120 - Architectural Considerations for Component Libraries
 
 ## Topic
-127 - Component Composition and Reusability
+128 - Building New Views Using Layout Components and UI Blocks
