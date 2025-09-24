@@ -8,7 +8,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 100 - Design Systems and Angular Component Libraries
 
 ## Chapter
-120 - Architectural Considerations for Component Libraries
-
-## Topic
-128 - Building New Views Using Layout Components and UI Blocks
+130 - Storybook for Component Development and Documentation
