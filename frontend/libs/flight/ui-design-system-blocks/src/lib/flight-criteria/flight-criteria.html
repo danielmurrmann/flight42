@@ -1,0 +1,9 @@
+<div class="flight-criteria">
+    <form #form="ngForm">
+        <ds-text-box name="from" label="From" required minlength="3" [(ngModel)]="_from"
+                     [errorHint]="(form?.controls?.['from']?.touched || _from()) && form?.controls?.['from']?.invalid ? 'Needs to have at least 3 chars' : ''" />
+        <ds-text-box name="to" label="To" required minlength="3" [(ngModel)]="_to"
+                    [errorHint]="(form?.controls?.['to']?.touched || _to()) && form?.controls?.['to']?.invalid ? 'Needs to have at least 3 chars' : ''"/>
+    </form>
+    <ds-button [disabled]="form?.invalid ?? true" label="Search" (tap)="_onSearch()" />
+</div>

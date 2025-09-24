@@ -1,0 +1,22 @@
+.flight-criteria {
+    background-color: var(--primary-block-color);
+    padding: var(--element-space);
+    display: flex;
+    flex-direction: column;
+    gap: var(--element-space);
+}
+
+.flight-criteria form {
+    display: flex;
+    gap: var(--element-space);
+}
+
+@media only screen and (max-width: 600px) {
+    .flight-criteria form {
+        flex-direction: column;
+    }
+}
+
+.flight-criteria form ds-text-box {
+    flex-grow: 1;
+}

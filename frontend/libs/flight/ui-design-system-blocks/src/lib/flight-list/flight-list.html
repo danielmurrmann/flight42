@@ -1,0 +1,9 @@
+<div class="flight-list">
+    <ds-data-table [dataSource]="data()">
+        <ds-data-table-string-item label="ID" key="id" />
+        <ds-data-table-string-item label="From" key="from" />
+        <ds-data-table-string-item label="To" key="to" />
+        <ds-data-table-date-item label="Date" key="date" />
+        <ds-data-table-success-item label="On Time" key="delay" [invertValue]="true" />
+      </ds-data-table>
+</div>
