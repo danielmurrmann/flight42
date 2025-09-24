@@ -9,3 +9,6 @@ This repository contains a sample project for Angular workshops conducted by Ang
 
 ## Chapter
 130 - Storybook for Component Development and Documentation
+
+## Topic
+131 - Isolated Component Interaction and Development

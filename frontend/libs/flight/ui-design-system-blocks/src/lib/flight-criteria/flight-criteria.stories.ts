@@ -20,3 +20,21 @@ export default meta;
 type Story = StoryObj<FlightCriteria>;
 
 export const Basic: Story = {};
+
+export const WithErrors: Story = {
+  args: {
+    criteria: {
+      from: 'Mu',
+      to: 'Be',
+    },
+  },
+};
+
+export const WithoutErrors: Story = {
+  args: {
+    criteria: {
+      from: 'Munich',
+      to: 'Berlin',
+    },
+  },
+};

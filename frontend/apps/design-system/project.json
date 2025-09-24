@@ -90,8 +90,11 @@
         "port": 4400,
         "configDir": "frontend/apps/design-system/.storybook",
         "browserTarget": "design-system:build-storybook",
-        "compodoc": false,
-        "styles": ["frontend/libs/shared/ui-design-system/src/styles/styles.css"]
+        "compodoc": true,
+        "compodocArgs": ["-e", "json", "-d", "."],
+        "styles": [
+          "frontend/libs/shared/ui-design-system/src/styles/styles.css"
+        ]
       },
       "configurations": {
         "ci": {
@@ -106,8 +109,11 @@
         "outputDir": "dist/storybook/design-system",
         "configDir": "frontend/apps/design-system/.storybook",
         "browserTarget": "design-system:build-storybook",
-        "compodoc": false,
-        "styles": ["frontend/libs/shared/ui-design-system/src/styles/styles.css"]
+        "compodoc": true,
+        "compodocArgs": ["-e", "json", "-d", "."],
+        "styles": [
+          "frontend/libs/shared/ui-design-system/src/styles/styles.css"
+        ]
       },
       "configurations": {
         "ci": {
