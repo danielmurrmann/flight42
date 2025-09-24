@@ -1,0 +1,14 @@
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-size-smaller);
+    color: var(--secondary-color);
+    margin-bottom: var(--element-space);
+}
+
+.dropdown select {
+    margin-top: var(--element-space);
+    padding: var(--element-space);
+    color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+}

@@ -1,0 +1,9 @@
+<div class="dropdown">
+	<span>{{ label() }}</span>
+    <select #select (change)="_onChange()">
+        @for(item of choices(); track $index) {
+        @let itemValue = $any(item)[valueKey()];
+        <option [value]="itemValue" [selected]="itemValue === value()">{{ $any(item)[displayKey()] }}</option>
+        }
+    </select>
+</div>
