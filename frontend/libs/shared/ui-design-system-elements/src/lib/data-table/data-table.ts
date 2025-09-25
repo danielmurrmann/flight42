@@ -16,6 +16,7 @@ export const DS_DATA_TABLE_ITEM = new InjectionToken<DataTableItem>('DsDataTable
   styleUrl: './data-table.css'
 })
 export class DataTable {
+  /** The data source */
   dataSource = input<unknown[]>();
   /** The currently selected dataset */
   selectedDataset = model<unknown|null>(null);

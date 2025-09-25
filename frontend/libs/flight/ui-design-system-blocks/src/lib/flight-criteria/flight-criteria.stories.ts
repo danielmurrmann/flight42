@@ -5,7 +5,7 @@ import { fn } from "storybook/test";
 const meta: Meta<FlightCriteria> = {
     title: 'Blocks/Flight Criteria',
     component: FlightCriteria,
-    tags: ['autodocs'],
+    tags: [],
     args: { 
         criteria: { from: '', to: '' },
         searchFlights: fn()

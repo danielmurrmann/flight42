@@ -23,6 +23,8 @@ export type AppBarItem = AppBarActionConfig | AppBarSearchConfig;
   styleUrl: './app-bar.css'
 })
 export class AppBar {
+  /** The title */
   title = input('');
+  /** The items in the app bar */
   items = input<AppBarItem[]>([]);
 }

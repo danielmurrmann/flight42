@@ -1,0 +1,23 @@
+import { Meta, Primary, Story, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as FlightCriteriaStories from './flight-criteria.stories';
+ 
+<Meta of={FlightCriteriaStories} />
+
+# Flight Criteria
+
+The 'Flight Criteria' block is used to filter flights. In its default state search is disabled.
+
+<Primary />
+
+You have to enter at least three characters into each field if not the component displays repective errors.
+
+<Story of={FlightCriteriaStories.WithErrors} />
+
+If you filled the form correctly, the search button gets enabled.
+
+<Story of={FlightCriteriaStories.WithoutErrors} />
+
+> Search can be pressed if the form is correctly filled only!
+
+## API Reference
+<ArgTypes of={FlightCriteriaStories} exclude="^_.*" />

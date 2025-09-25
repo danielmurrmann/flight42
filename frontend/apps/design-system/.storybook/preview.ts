@@ -8,6 +8,11 @@ setCompodocJson(docJson);
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: ['Design Tokens', 'Elements', 'Blocks', 'Layouts', 'Pages']
+      }
+    },
     actions: { argTypesRegex: '^[A-Z].*Tap' },
     controls: {
       matchers: {

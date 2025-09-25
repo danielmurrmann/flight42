@@ -1,0 +1,57 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+ 
+<Meta title="Design Tokens/Colors" />
+ 
+# Colors
+
+## Color Palette
+
+<ColorPalette>
+  <ColorItem
+    title="Primary"
+    subtitle="Anthracite"
+    colors={{'Primary Light': 'var(--primary-color-light)', Primary: 'var(--primary-color)', 'Primary Dark': 'var(--primary-color-dark)', 'Text on Primary': 'var(--text-on-primary-color)'}}
+  />
+  <ColorItem
+    title="Secondary"
+    subtitle="Gray"
+    colors={{'Secondary Light': 'var(--secondary-color-light)', Secondary: 'var(--secondary-color)', 'Secondary Dark': 'var(--secondary-color-dark)', 'Text on Secondary': 'var(--text-on-secondary-color)'}}
+  />
+</ColorPalette>
+
+## Text on Background
+
+### Primary
+
+Use the primary colors for the most important actions and visuals you would like to emphasis to the user.
+
+``primary-color`` color with text in ``text-on-primary-color``.
+<div className="color-sample primary-color">On Primary</div>
+
+### Secondary
+
+Use the secondary colors for the secondary important actions and visuals you would like to emphasis to the user, but not as much as the primary things.
+
+``secondary-color`` color with text in ``text-on-secondary-color``.
+<div className="color-sample secondary-color">On Secondary</div>
+
+
+
+<style>
+{`
+    .color-sample {
+        height: 50px;
+        width: 120px;
+        padding: 5px;
+        margin-top: 10px;
+    }
+    .primary-color {
+        background-color: var(--primary-color);
+        color: var(--text-on-primary-color);
+    }
+    .secondary-color {
+        background-color: var(--secondary-color);
+        color: var(--text-on-secondary-color);
+    }
+`}
+</style>

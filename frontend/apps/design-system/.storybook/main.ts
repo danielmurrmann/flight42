@@ -5,7 +5,9 @@ const config: StorybookConfig = {
     '../src/**/*.@(mdx|stories.@(ts|mdx))',
     '../../../libs/*/ui-*/**/*.@(mdx|stories.@(ts|mdx))'
   ],
-  addons: [],
+  addons: [
+    '@storybook/addon-docs'
+  ],
   framework: {
     name: '@storybook/angular',
     options: {},

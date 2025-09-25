@@ -17,8 +17,11 @@ export class TextBox implements ControlValueAccessor {
   _value = signal('');
   _disabled = signal(false);
 
+  /** The name of the control within the angular form object model */
   name = input('');
+  /** The label */
   label = input('');
+  /** An optional error hint */
   errorHint = input('');
 
   writeValue(obj: unknown): void {
