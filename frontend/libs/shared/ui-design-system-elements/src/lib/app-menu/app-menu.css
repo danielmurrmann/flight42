@@ -1,0 +1,19 @@
+.app-menu {
+    
+}
+
+.app-menu .title {
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding: var(--element-space);
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--secondary-color-light);
+}
+
+.app-menu .items {
+    display: flex;
+    flex-direction: column;
+    gap: calc(2 * var(--block-space));
+}

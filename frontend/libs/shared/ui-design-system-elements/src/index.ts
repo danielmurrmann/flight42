@@ -6,3 +6,5 @@ export * from './lib/data-table/data-table-date-item';
 export * from './lib/data-table/data-table-string-item';
 export * from './lib/data-table/data-table-success-item';
 export * from './lib/app-bar/app-bar';
+export * from './lib/app-menu/app-menu';
+export * from './lib/app-menu/app-menu-item';

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { FlightInfoDto } from '@flight42/flight-domain';
 import { DataTable, DataTableDateItem, DataTableStringItem, DataTableSuccessItem } from "@flight42/shared-ui-design-system-elements";
 
@@ -12,4 +12,10 @@ import { DataTable, DataTableDateItem, DataTableStringItem, DataTableSuccessItem
 export class FlightList {
   /** The data source */
   data = input<FlightInfoDto[]>([]);
+  /** Event emitted when a flight is selected */
+  flightSelected = output<FlightInfoDto>();
+
+  _onFlightSelected($event: unknown) {
+    this.flightSelected.emit($event as FlightInfoDto);
+  }
 }

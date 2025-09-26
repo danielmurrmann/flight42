@@ -1,0 +1,28 @@
+<div class="flight-card">
+  @if(_flight(); as flight) {
+  <h3>{{ flight.connection.from }} - {{ flight.connection.to }}</h3>
+  <div>Flight ID: {{ flight.id }}</div>
+  <div>Departure: {{ flight.times.takeOff | date:'medium' }}</div>
+  <div>Arrival: {{ flight.times.landing | date:'medium' }}</div>
+  <div>Operator: {{ flight.operator.name }}</div>
+  <div class="indicator-row">
+    @if(flight.times.delay === null) {
+    <span class="indicator on-time"></span><span>On Time</span>
+    } @else {
+    <span class="indicator delayed"></span><span>Delayed {{ flight.times.delay }} minutes </span>
+    }
+  </div>
+  } 
+  @if (_flightInfo(); as flightInfo) {
+  <h3>{{ flightInfo.from }} - {{ flightInfo.to }}</h3>
+  <div>Flight ID: {{ flightInfo.id }}</div>
+  <div>Departure: {{ flightInfo.date| date:'medium' }}</div>
+  <div class="indicator-row">
+    @if(flightInfo.delay === null) {
+    <span class="indicator on-time"></span><span>On Time</span>
+    } @else {
+    <span class="indicator delayed"></span><span>Delayed {{ flightInfo.delay }} minutes </span>
+    }
+  </div>
+  }
+</div>

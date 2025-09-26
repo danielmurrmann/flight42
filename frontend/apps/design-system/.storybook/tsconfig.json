@@ -4,7 +4,11 @@
     "emitDecoratorMetadata": true,
     "resolveJsonModule": true
   },
-  "exclude": ["../**/*.spec.ts"],
+  "exclude": [
+    "../**/*.spec.ts", 
+    "../../../libs/*/ui-*/**/*.cy.ts", 
+    "../../../libs/*/ui-*/**/*.pw.ts"
+  ],
   "include": [
     "../src/**/*.ts",
     "../../../libs/*/ui-*/**/*.ts",

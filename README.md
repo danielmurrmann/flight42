@@ -8,7 +8,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 100 - Design Systems and Angular Component Libraries
 
 ## Chapter
-130 - Storybook for Component Development and Documentation
-
-## Topic
-133 - Automatic Component Interactions
+140 - Component Testing Strategies

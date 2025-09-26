@@ -2,7 +2,11 @@
   "name": "@flight42/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "design-system:storybook": "nx run design-system:storybook",
+    "design-system:cypress": "cypress open --config-file ./frontend/apps/design-system/cypress.config.ts",
+    "design-system:playwright": "playwright test --ui --config ./frontend/apps/design-system/playwright.config.ts"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~20.1.0",
@@ -37,6 +41,8 @@
     "@schematics/angular": "~20.1.0",
     "@storybook/angular": "9.1.1",
     "@storybook/addon-docs": "9.1.1",
+    "@storybook/test-runner": "0.23.0",
+    "@playwright/test": "^1.55.1",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
@@ -44,6 +50,7 @@
     "@types/node": "18.16.9",
     "@typescript-eslint/utils": "^8.29.0",
     "angular-eslint": "^20.0.0",
+    "cypress": "^15.3.0",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^10.0.0",
     "jest": "^30.0.2",

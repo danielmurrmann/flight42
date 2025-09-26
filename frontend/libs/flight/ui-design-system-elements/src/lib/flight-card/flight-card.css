@@ -1,0 +1,27 @@
+.flight-card {
+  background-color: var(--primary-block-color);
+  padding: var(--element-space);
+  display: flex;
+  flex-direction: column;
+  gap: var(--element-space);
+  
+  h3 {
+    margin: 0;
+  }
+
+  .indicator-row {
+    display: flex;
+    align-items: center;
+    gap: var(--element-space);
+    .indicator {
+      width: 15px;
+      height: 15px;
+    }
+    .on-time {
+      background-color: var(--success-color);
+    }
+    .delayed {
+      background-color: var(--error-color);
+    }
+  }
+}

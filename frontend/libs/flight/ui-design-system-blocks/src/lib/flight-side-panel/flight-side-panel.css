@@ -1,0 +1,12 @@
+.flight-side-panel {
+    .edit-section {
+        display: flex;
+        align-items: center;
+        gap: var(--element-space);
+    }
+}
+
+.grow {
+    flex-grow: 1;
+    margin-top: calc(-1 * var(--element-space));
+}

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/angular";
 import { FlightCriteria } from "./flight-criteria";
-import { userEvent, within, fn } from "storybook/test";
+import { userEvent, within, fn, expect } from "storybook/test";
 
 const meta: Meta<FlightCriteria> = {
     title: 'Blocks/Flight Criteria',
@@ -45,6 +45,10 @@ export const WithErrorsViaUserInput: Story = {
         await userEvent.type(canvas.getByLabelText('From'), 'Mu');
         await userEvent.type(canvas.getByLabelText('To'), 'Be');
         await userEvent.click(canvas.getByRole('button', { name: 'Search' }));
+        await expect(canvas.getByTestId('error-hint-from')).toBeInTheDocument();
+        await expect(canvas.getByTestId('error-hint-to')).toBeInTheDocument();
+        await expect(canvas.getByRole('button', { name: 'Search' })).toBeDisabled();
+        await expect(context.args.searchFlights).not.toHaveBeenCalled()
       }
 };
 
