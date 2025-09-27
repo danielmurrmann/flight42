@@ -20,3 +20,23 @@ it('shows error hints if form is not correctly filled and search button is disab
     
     cy.get('@searchFlightsSpy').should('not.have.callCount');
 });
+
+it('should emit searchFlights event if form is entered correctly and search is pressed', () => {
+    cy.mount(FlightCriteria, {
+        componentProperties: {
+            searchFlights: createOutputSpy('searchFlightsSpy')
+        },
+    });
+
+    cy.get('input[aria-label=From]').type('Munich');
+    cy.get('input[aria-label=To]').type('Berlin');
+
+    cy.get('p[data-testid=error-hint-from]').should('not.exist');
+    cy.get('p[data-testid=error-hint-to]').should('not.exist');
+
+    cy.contains('button', 'Search').should('be.enabled');
+
+    cy.contains('button', 'Search').click();
+
+    cy.get('@searchFlightsSpy').should('have.been.called');
+});

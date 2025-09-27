@@ -58,5 +58,9 @@ export const WithoutErrorsViaUserInput: Story = {
         await userEvent.type(canvas.getByLabelText('From'), 'Munich');
         await userEvent.type(canvas.getByLabelText('To'), 'Berlin');
         await userEvent.click(canvas.getByRole('button', { name: 'Search' }));
+        await expect(canvas.queryByTestId('error-hint-from')).not.toBeInTheDocument();
+        await expect(canvas.queryByTestId('error-hint-to')).not.toBeInTheDocument();
+        await expect(canvas.getByRole('button', { name: 'Search' })).not.toBeDisabled();
+        await expect(context.args.searchFlights).toHaveBeenCalled()
       }
 };
