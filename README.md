@@ -5,10 +5,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 # Current Step
 
 ## Training
-100 - Design Systems and Angular Component Libraries
-
-## Chapter
-140 - Component Testing Strategies
-
-## Topic
-143 - Comparing Angular Component Testing Tools
+200 - Advanced Angular - Architectures for Enterprise Applications

@@ -6,6 +6,7 @@
       <div class="search-criteria">
         <ng-content select="[search-criteria]" />
       </div>
+      <ds-loading-indicator [showLoading]="showLoading()" />
       <div class="search-result">
         <ng-content select="[search-result]" />
       </div>

@@ -16,6 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@flight42/flight-domain": ["frontend/libs/flight/domain/src/index.ts"],
+      "@flight42/flight-feature-manage": [
+        "frontend/libs/flight/feature-manage/src/index.ts"
+      ],
+      "@flight42/flight-feature-next-flights": [
+        "frontend/libs/flight/feature-next-flights/src/index.ts"
+      ],
       "@flight42/flight-ui-design-system-blocks": [
         "frontend/libs/flight/ui-design-system-blocks/src/index.ts"
       ],

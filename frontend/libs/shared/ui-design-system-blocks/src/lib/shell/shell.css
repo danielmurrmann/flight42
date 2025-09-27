@@ -1,0 +1,17 @@
+.shell {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.shell .side-menu {
+    background-color: var(--secondary-block-color);
+    height: 100%;
+    overflow-y: auto;
+}
+
+.shell .content {
+    height: 100%;    
+    overflow-y: auto;
+    flex-grow: 1;
+}

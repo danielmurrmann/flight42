@@ -41,3 +41,19 @@ export const WithSidePanel: Story = {
       })
 };
 
+export const WithLoadingAnimation: Story = {
+  args: {
+    showLoading: true
+  },
+  render: args => ({
+    props: args,
+    template: `
+      <ds-search-layout ${argsToTemplate(args)}>
+        <div search-criteria style="background-color: var(--primary-block-color); text-align: center; line-height: 150px;">Search Criteria</div>
+        <div search-result style="background-color: var(--primary-block-color); text-align: center; line-height: 450px;">Search Result</div>
+        <div side-panel style="background-color: var(--primary-block-color); text-align: center; line-height: 621px;">Side Panel</div>
+      </ds-search-layout>
+    `
+  })
+};
+

@@ -20,7 +20,6 @@
 }
 
 .search-criteria {
-    border-bottom: 1px solid var(--secondary-color-light);
     padding-bottom: var(--block-space);
 }
 

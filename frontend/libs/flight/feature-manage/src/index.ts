@@ -1,0 +1,4 @@
+import { FLIGHT_FEATURE_MANAGE_ROUTES } from "./lib/routes";
+
+export { FLIGHT_FEATURE_MANAGE_ROUTES };
+export default FLIGHT_FEATURE_MANAGE_ROUTES;

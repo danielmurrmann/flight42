@@ -1,0 +1,17 @@
+.loading-indicator {
+  height: 2px;
+  background-color: var(--secondary-color-light);
+
+}
+
+.loading-indicator.show-animation {
+    --c: no-repeat linear-gradient(var(--secondary-color-dark) 0 0);
+  background: var(--c),var(--c), var(--secondary-color-light);
+  background-size: 60% 100%;
+  animation: slide 3s infinite;
+}
+
+@keyframes slide {
+  0%   {background-position:-150% 0,-150% 0}
+  100% {background-position: 250% 0, 250% 0}
+}

@@ -1,0 +1,27 @@
+{
+  "name": "mock-backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "backend/mock-backend/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "mock-backend:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "mock-backend:build:development"
+        },
+        "production": {
+          "buildTarget": "mock-backend:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

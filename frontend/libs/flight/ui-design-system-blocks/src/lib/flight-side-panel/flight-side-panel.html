@@ -1,5 +1,10 @@
 <div class="flight-side-panel">
   <h4>Flight Details</h4>
   <hr>
-  <ds-flight-card [flight]="flight()" />
+  <ds-flight-card [flight]="flight" />
+  <h4>Flight Times Quick Edit</h4>
+  <hr>
+  <ds-date-time-picker name="takeOffDate" label="Take Off" [(ngModel)]="_flightTimes.takeOff" />
+  <ds-date-time-picker name="landingDate" label="Landing" [(ngModel)]="_flightTimes.landing" />
+  <ds-button label="Save" (click)="onSaveFlightTimes()" />
 </div>
