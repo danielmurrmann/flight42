@@ -11,4 +11,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 140 - Component Testing Strategies
 
 ## Topic
-142 - Angular Component Testing Tools
+143 - Comparing Angular Component Testing Tools
