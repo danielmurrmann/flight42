@@ -1,0 +1,20 @@
+{
+  "name": "aircraft-ui-blocks",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "frontend/libs/aircraft/ui-blocks/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["type:ui-composition", "domain:aircraft"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "frontend/libs/aircraft/ui-blocks/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

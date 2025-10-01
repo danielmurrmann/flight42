@@ -15,6 +15,18 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@flight42/aircraft-domain": [
+        "frontend/libs/aircraft/domain/src/index.ts"
+      ],
+      "@flight42/aircraft-feature-dashboard": [
+        "frontend/libs/aircraft/feature-dashboard/src/index.ts"
+      ],
+      "@flight42/aircraft-ui-blocks": [
+        "frontend/libs/aircraft/ui-blocks/src/index.ts"
+      ],
+      "@flight42/aircraft-ui-elements": [
+        "frontend/libs/aircraft/ui-elements/src/index.ts"
+      ],
       "@flight42/flight-domain": ["frontend/libs/flight/domain/src/index.ts"],
       "@flight42/flight-feature-manage": [
         "frontend/libs/flight/feature-manage/src/index.ts"

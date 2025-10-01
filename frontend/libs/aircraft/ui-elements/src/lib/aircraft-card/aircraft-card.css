@@ -1,0 +1,11 @@
+.aircraft-card {
+  background-color: var(--primary-block-color);
+  padding: var(--element-space);
+  display: flex;
+  flex-direction: column;
+  gap: var(--element-space);
+  
+  h3 {
+    margin: 0;
+  }
+}

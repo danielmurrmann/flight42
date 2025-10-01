@@ -11,4 +11,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 210 - Structuring Large Angular Applications
 
 ## Topic
-211 - Nx Monorepos for Scalable Application Management
+212 - Domain-Driven Design (DDD) for Modular Architecture

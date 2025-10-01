@@ -1,0 +1,20 @@
+{
+  "name": "aircraft-feature-dashboard",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "frontend/libs/aircraft/feature-dashboard/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["type:feature", "domain:aircraft"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "frontend/libs/aircraft/feature-dashboard/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
