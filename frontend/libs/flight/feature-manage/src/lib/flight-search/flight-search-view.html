@@ -8,6 +8,6 @@
   <ds-flight-list search-result [data]="_flightsResource.value()" (flightSelected)="selectFlight($event)" />
 
   @if(_selectedFlightResource.value(); as flight) {
-    <ds-flight-side-panel side-panel [flight]="flight" [aircraft]="_selectedAircraftResource.value()" (flightTimesChange)="updateSelectedFlightTimes($event)" />
+    <ds-flight-side-panel side-panel [flight]="flight" [aircraft]="_selectedAircraftResource.value()" (flightTimesChange)="updateSelectedFlightTimes($event)" (edit)="onEdit()"/>
   }
 </ds-search-layout>

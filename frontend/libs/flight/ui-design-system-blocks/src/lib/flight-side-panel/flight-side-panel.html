@@ -12,4 +12,7 @@
   <ds-date-time-picker name="takeOffDate" label="Take Off" [control]="_flightTimesForm.takeOff" />
   <ds-date-time-picker name="landingDate" label="Landing" [control]="_flightTimesForm.landing" />
   <ds-button label="Save" (click)="onSaveFlightTimes()" />
+  <h4>Actions</h4>
+  <hr>
+  <ds-button (tap)="edit.emit()" type="secondary" label="Edit"/>
 </div>

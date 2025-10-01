@@ -18,6 +18,8 @@ export class FlightSidePanel {
   aircraft = input<AircraftInfoDto | undefined>(undefined);
   /** Event emitted when flight times change */
   flightTimesChange = output<FlightTimes>();
+  /** Event emitted when the edit button is tapped */
+  edit = output<void>();
   
   _flightTimesTakeOff = linkedSignal(() => this.flight().times.takeOff);
   _flightTimesLanding = linkedSignal(() => this.flight().times.landing);

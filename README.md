@@ -8,7 +8,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 200 - Advanced Angular - Architectures for Enterprise Applications
 
 ## Chapter
-220 - Signals and Reactive Programming in Angular
-
-## Topic
-225 - RxJS Interop with Signals
+230 - Signal Based Forms
