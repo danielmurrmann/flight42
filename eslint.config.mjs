@@ -17,8 +17,20 @@ export default [
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
           depConstraints: [
             {
-              sourceTag: '*',
-              onlyDependOnLibsWithTags: ['*'],
+              sourceTag: 'domain:flight',
+              onlyDependOnLibsWithTags: ['domain:flight', 'domain:shared'],
+            },
+            {
+              sourceTag: 'domain:aircraft',
+              onlyDependOnLibsWithTags: ['domain:aircraft', 'domain:shared'],
+            },
+            {
+              sourceTag: 'domain:shared',
+              onlyDependOnLibsWithTags: ['domain:shared'],
+            },
+            {
+              sourceTag: 'type:app',
+              onlyDependOnLibsWithTags: ['type:feature', 'type:ui-composition', 'domain:flight', 'domain:aircraft', 'domain:shared'],
             },
             {
               sourceTag: 'type:demo-app',
@@ -27,6 +39,10 @@ export default [
             {
               sourceTag: 'type:feature',
               onlyDependOnLibsWithTags: ['type:ui-composition', 'type:domain', 'type:util'],
+            },
+            {
+              sourceTag: 'type:api',
+              onlyDependOnLibsWithTags: ['type:ui-composition', 'type:ui', 'type:domain', 'type:util'],
             },
             {
               sourceTag: 'type:ui-composition',

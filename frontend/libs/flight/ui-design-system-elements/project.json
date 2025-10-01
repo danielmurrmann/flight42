@@ -4,7 +4,7 @@
   "sourceRoot": "frontend/libs/flight/ui-design-system-elements/src",
   "prefix": "ds",
   "projectType": "library",
-  "tags": ["type:ui"],
+  "tags": ["type:ui", "domain:flight"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",

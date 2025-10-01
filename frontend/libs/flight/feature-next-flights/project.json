@@ -4,7 +4,7 @@
   "sourceRoot": "frontend/libs/flight/feature-next-flights/src",
   "prefix": "lib",
   "projectType": "library",
-  "tags": [],
+  "tags": ["type:feature", "domain:flight"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",

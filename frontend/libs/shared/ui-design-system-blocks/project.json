@@ -4,7 +4,7 @@
   "sourceRoot": "frontend/libs/shared/ui-design-system-blocks/src",
   "prefix": "ds",
   "projectType": "library",
-  "tags": ["type:ui-composition"],
+  "tags": ["type:ui-composition", "domain:shared"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",

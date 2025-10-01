@@ -9,3 +9,6 @@ This repository contains a sample project for Angular workshops conducted by Ang
 
 ## Chapter
 210 - Structuring Large Angular Applications
+
+## Topic
+211 - Nx Monorepos for Scalable Application Management
