@@ -4,15 +4,72 @@
   "projectType": "application",
   "prefix": "app",
   "sourceRoot": "frontend/apps/flight/src",
-  "tags": ["type:app"],
+  "tags": [
+    "type:app"
+  ],
   "targets": {
     "build": {
+      "executor": "@angular-architects/native-federation:build",
+      "options": {},
+      "configurations": {
+        "production": {
+          "target": "flight:esbuild:production"
+        },
+        "development": {
+          "target": "flight:esbuild:development",
+          "dev": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-architects/native-federation:build",
+      "options": {
+        "target": "flight:serve-original:development",
+        "rebuildDelay": 0,
+        "dev": true,
+        "port": 0
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular/build:extract-i18n",
+      "options": {
+        "buildTarget": "flight:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "frontend/apps/flight/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "flight:build",
+        "staticFilePath": "dist/frontend/apps/flight/browser",
+        "spa": true
+      }
+    },
+    "esbuild": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/frontend/apps/flight",
         "browser": "frontend/apps/flight/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js",
+          "es-module-shims"
+        ],
         "tsConfig": "frontend/apps/flight/tsconfig.app.json",
         "assets": [
           {
@@ -20,7 +77,9 @@
             "input": "frontend/apps/flight/public"
           }
         ],
-        "styles": ["frontend/apps/flight/src/styles.css"]
+        "styles": [
+          "frontend/apps/flight/src/styles.css"
+        ]
       },
       "configurations": {
         "production": {
@@ -46,42 +105,20 @@
       },
       "defaultConfiguration": "production"
     },
-    "serve": {
+    "serve-original": {
       "continuous": true,
       "executor": "@angular/build:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "flight:build:production"
+          "buildTarget": "flight:esbuild:production"
         },
         "development": {
-          "buildTarget": "flight:build:development"
+          "buildTarget": "flight:esbuild:development"
         }
       },
-      "defaultConfiguration": "development"
-    },
-    "extract-i18n": {
-      "executor": "@angular/build:extract-i18n",
+      "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "flight:build"
-      }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "frontend/apps/flight/jest.config.ts"
-      }
-    },
-    "serve-static": {
-      "continuous": true,
-      "executor": "@nx/web:file-server",
-      "options": {
-        "buildTarget": "flight:build",
-        "staticFilePath": "dist/frontend/apps/flight/browser",
-        "spa": true
+        "port": 4200
       }
     }
   }

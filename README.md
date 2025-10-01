@@ -11,4 +11,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 210 - Structuring Large Angular Applications
 
 ## Topic
-213 - Sharing Artefacts within a Monorepo
+214 - Implementing Microfrontends

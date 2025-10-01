@@ -1,9 +1,9 @@
 <ds-shell>
     <div shell-side-menu>
         <ds-app-menu appTitle="Flight42">
-            <ds-app-menu-item iconName="matManageSearch" label="Manage Flights" />
-            <ds-app-menu-item iconName="matFlightTakeoff" label="Next Flights" />
-            <ds-app-menu-item iconName="matFlight" label="Aircrafts" />
+            <ds-app-menu-item iconName="matManageSearch" label="Manage Flights" routerLink="/flight/manage" />
+            <ds-app-menu-item iconName="matFlightTakeoff" label="Next Flights" routerLink="/flight/next-flights" />
+            <ds-app-menu-item iconName="matFlight" label="Aircrafts" routerLink="/aircraft/dashboard" />
         </ds-app-menu>
     </div>
     <router-outlet shell-content/>

@@ -1,0 +1,4 @@
+{
+	"aircraft": "http://localhost:4201/remoteEntry.json",
+	"flight": "http://localhost:4200/remoteEntry.json"
+}
