@@ -2,6 +2,11 @@
   <h4>Flight Details</h4>
   <hr>
   <ds-flight-card [flight]="flight" />
+  @if(aircraft; as aircraft) {  
+  <h4>Aircraft Details</h4>
+  <hr>
+  <lib-aircraft-card [aircraft]="aircraft" />
+  }
   <h4>Flight Times Quick Edit</h4>
   <hr>
   <ds-date-time-picker name="takeOffDate" label="Take Off" [(ngModel)]="_flightTimes.takeOff" />

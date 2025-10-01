@@ -7,6 +7,6 @@
   <ds-flight-list search-result [data]="_flights" (flightSelected)="selectFlight($event)" />
 
   @if(_selectedFlight; as flight) {
-    <ds-flight-side-panel side-panel [flight]="flight" (flightTimesChange)="updateSelectedFlightTimes($event)" />
+    <ds-flight-side-panel side-panel [flight]="flight" [aircraft]="_selectedAircraft" (flightTimesChange)="updateSelectedFlightTimes($event)" />
   }
 </ds-search-layout>

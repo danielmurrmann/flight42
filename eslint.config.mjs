@@ -18,7 +18,7 @@ export default [
           depConstraints: [
             {
               sourceTag: 'domain:flight',
-              onlyDependOnLibsWithTags: ['domain:flight', 'domain:shared'],
+              onlyDependOnLibsWithTags: ['domain:flight', 'domain:shared', 'api:aircraft'],
             },
             {
               sourceTag: 'domain:aircraft',
@@ -38,7 +38,7 @@ export default [
             },
             {
               sourceTag: 'type:feature',
-              onlyDependOnLibsWithTags: ['type:ui-composition', 'type:domain', 'type:util'],
+              onlyDependOnLibsWithTags: ['type:ui-composition', 'type:domain', 'type:util', 'type:api'],
             },
             {
               sourceTag: 'type:api',
@@ -46,7 +46,7 @@ export default [
             },
             {
               sourceTag: 'type:ui-composition',
-              onlyDependOnLibsWithTags: ['type:ui', 'type:domain', 'type:util'],
+              onlyDependOnLibsWithTags: ['type:ui', 'type:domain', 'type:util', 'type:api'],
             },
             {
               sourceTag: 'type:ui',

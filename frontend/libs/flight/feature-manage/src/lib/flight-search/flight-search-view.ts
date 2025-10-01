@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Flight, FlightCriteriaDto, FlightInfoDto, FlightService, FlightTimes, initialFlightCriteriaDto } from '@flight42/flight-domain';
 import { SearchLayout } from '@flight42/shared-ui-design-system-layouts';
 import { FlightCriteria, FlightList, FlightSidePanel } from '@flight42/flight-ui-design-system-blocks';
+import { AircraftInfoDto, AircraftServiceFacade } from '@flight42/aircraft-api';
 
 @Component({
   imports: [SearchLayout, FlightCriteria, FlightList, FlightSidePanel],
@@ -12,13 +13,16 @@ export class FlightSearchView {
   _showLoading = false;
   _flights: FlightInfoDto[] = [];
   _selectedFlight: Flight | null = null;
+  _selectedAircraft: AircraftInfoDto | null = null;
 
   _flightService = inject(FlightService);
+  _aircraftServiceFacade = inject(AircraftServiceFacade);
 
   reset() {
     this._criteria = initialFlightCriteriaDto;
     this._flights = [];
     this._selectedFlight = null;
+    this._selectedAircraft = null;
   }
 
   async setCriteria(criteria: FlightCriteriaDto) {
@@ -32,6 +36,8 @@ export class FlightSearchView {
     this._showLoading = true;
     const flight = await this._flightService.loadFlightById(flightInfoDto.id);
     this._selectedFlight = flight;
+    const aircraft = await this._aircraftServiceFacade.loadAircraftInfoById(flight.operator.aircraftId);
+    this._selectedAircraft = aircraft;
     this._showLoading = false;
   }
 

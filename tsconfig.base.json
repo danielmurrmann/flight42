@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@flight42/aircraft-api": ["frontend/libs/aircraft/api/src/index.ts"],
       "@flight42/aircraft-domain": [
         "frontend/libs/aircraft/domain/src/index.ts"
       ],
