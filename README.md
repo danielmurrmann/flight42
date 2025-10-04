@@ -8,4 +8,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 200 - Advanced Angular - Architectures for Enterprise Applications
 
 ## Chapter
-230 - Signal Based Forms
+231 - Implement a Signal Based Form

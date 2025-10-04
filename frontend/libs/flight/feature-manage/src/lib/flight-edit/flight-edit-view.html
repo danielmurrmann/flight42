@@ -1,10 +1,40 @@
 <ds-base-layout title="Flight Edit">
     <div content>
-        <!-- ToDo: Create the flight edit form here. -->
+        <h2>Editing flight with id: {{ _flight().id }}</h2>
+        <div>
+            <h3>Connection</h3>
+            <ds-text-box [control]="_flightForm.connection.from" label="From" />
+            <ds-text-box [control]="_flightForm.connection.icaoFrom" label="ICAO From" />
+            <ds-text-box [control]="_flightForm.connection.to" label="To" />
+            <ds-text-box [control]="_flightForm.connection.icaoTo" label="ICAO To" />
+        </div>
+        <div>
+            <h3>Times</h3>
+            <ds-text-box [control]="_flightForm.times.takeOff" label="Take Off" />
+            <ds-text-box [control]="_flightForm.times.landing" label="Landing" />
+        </div>
+        <div>
+            <h3>Operator</h3>
+            <ds-text-box [control]="_flightForm.operator.name" label="Name" />
+            <ds-text-box [control]="_flightForm.operator.shortName" label="Short Name" />
+            <ds-dropdown [control]="_flightForm.operator.aircraftId" [choices]="_aircraftInfos()" valueKey="id" displayKey="registration" label="Aircraft" />
+        </div>
+        <div>
+            <h3>Pricing</h3>
+            <ds-text-box [control]="_flightForm.price.seatReservationSurcharge" label="Seat Reservation Surcharge" />
+            <h4>Class Prices</h4>
+            @for(classPrice of _flightForm.price.classPrices; track $index) {
+            <div>
+                <ds-text-box [control]="classPrice.flightClass" label="Flight Class" />
+                <ds-text-box [control]="classPrice.amount" label="Amount" />
+            </div>
+            }
+            <ds-button (click)="_onAddClassPrice()" label="Add Class Price" />
+        </div>
         <pre>
 Current flight object:
 ---------------------------
-            {{ _flight() | json }}            
+{{ _flight() | json }}            
         </pre>
     </div>
 </ds-base-layout>
