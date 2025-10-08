@@ -1,8 +1,8 @@
-import { Component, inject, signal } from '@angular/core';
-import { Flight, FlightCriteriaDto, FlightInfoDto, FlightService, FlightTimes, initialFlightCriteriaDto } from '@flight42/flight-domain';
+import { Component, computed, inject, linkedSignal, signal } from '@angular/core';
+import { FlightCriteriaDto, FlightInfoDto, FlightService, FlightTimes, initialFlightCriteriaDto } from '@flight42/flight-domain';
 import { SearchLayout } from '@flight42/shared-ui-design-system-layouts';
 import { FlightCriteria, FlightList, FlightSidePanel } from '@flight42/flight-ui-design-system-blocks';
-import { AircraftInfoDto, AircraftServiceFacade } from '@flight42/aircraft-api';
+import { AircraftServiceFacade } from '@flight42/aircraft-api';
 
 @Component({
   imports: [SearchLayout, FlightCriteria, FlightList, FlightSidePanel],
@@ -10,51 +10,40 @@ import { AircraftInfoDto, AircraftServiceFacade } from '@flight42/aircraft-api';
 })
 export class FlightSearchView {
   _criteria = signal<FlightCriteriaDto>({ from: 'Munich', to: 'Berlin' });
-  _showLoading = signal(false);
-  _flights = signal<FlightInfoDto[]>([]);
-  _selectedFlight = signal<Flight | null>(null);
-  _selectedAircraft = signal<AircraftInfoDto | null>(null);
+  _selectedFlightInfo = signal<FlightInfoDto | undefined>(undefined);
 
   _flightService = inject(FlightService);
   _aircraftServiceFacade = inject(AircraftServiceFacade);
 
+  _flightsResource = this._flightService.createFlightInfosResource(this._criteria);
+  _selectedFlightResource = this._flightService.createFlightResource(computed(() => this._selectedFlightInfo()?.id));
+  _selectedAircraftResource = this._aircraftServiceFacade.createAircraftInfoResource(computed(() => this._selectedFlightResource.value()?.operator.aircraftId));
+
+  _showLoading = linkedSignal(() => this._flightsResource.isLoading() || this._selectedFlightResource.isLoading() || this._selectedAircraftResource.isLoading());
+
   reset() {
     this._criteria.set(initialFlightCriteriaDto);
-    this._flights.set([]);
-    this._selectedFlight.set(null);
-    this._selectedAircraft.set(null);
+    this._flightsResource.set([]);
+    this._selectedFlightInfo.set(undefined);
   }
 
   async setCriteria(criteria: FlightCriteriaDto) {
     this._showLoading.set(true);
     this._criteria.set(criteria);
-    await this.loadFlightInfos();
-    this._showLoading.set(false);
   }
 
-  async selectFlight(flightInfoDto: FlightInfoDto) {
-    this._showLoading.set(true);
-    const flight = await this._flightService.loadFlightById(flightInfoDto.id);
-    this._selectedFlight.set(flight);
-    const aircraft = await this._aircraftServiceFacade.loadAircraftInfoById(flight.operator.aircraftId);
-    this._selectedAircraft.set(aircraft);
-    this._showLoading.set(false);
+  async selectFlight(selectedFlightInfo: FlightInfoDto) {
+    this._selectedFlightInfo.set(selectedFlightInfo);
   }
 
   async updateSelectedFlightTimes(times: FlightTimes) {
-    const selectedFlight = this._selectedFlight();
+    const selectedFlight = this._selectedFlightResource.value();
     if (selectedFlight) {
       this._showLoading.set(true);
       const updatedSelectedFlight = { ...selectedFlight, times };
-      this._selectedFlight.set(updatedSelectedFlight);
-      await this._flightService.updateFlight(updatedSelectedFlight);
-      await this.loadFlightInfos();
-      this._showLoading.set(false);
+      this._selectedFlightResource.set(updatedSelectedFlight);
+      this._flightService.updateFlight(updatedSelectedFlight);
+      await this._flightsResource.reload();
     }
-  }
-
-  private async loadFlightInfos() {
-    const flights = await this._flightService.loadFlightInfos(this._criteria().from, this._criteria().to);
-    this._flights.set(flights);
   }
 }

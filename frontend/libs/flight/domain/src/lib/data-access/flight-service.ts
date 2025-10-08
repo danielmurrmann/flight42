@@ -1,8 +1,9 @@
-import { HttpClient } from "@angular/common/http";
-import { inject, Injectable } from "@angular/core";
+import { HttpClient, httpResource } from "@angular/common/http";
+import { inject, Injectable, Signal } from "@angular/core";
 import { FlightInfoDto } from "../dtos/flight-info-dto";
 import { Flight } from "../domain/flight";
 import { firstValueFrom } from "rxjs";
+import { FlightCriteriaDto } from "../dtos/flight-criteria-dto";
 
 @Injectable({ providedIn: 'root' })
 export class FlightService {
@@ -14,8 +15,25 @@ export class FlightService {
         }));
     }
 
+    createFlightInfosResource(criteria: Signal<FlightCriteriaDto>) {
+        return httpResource<FlightInfoDto[]>(() => {
+            const criteriaValue = criteria();
+            if (!criteriaValue.from || !criteriaValue.to) return undefined;
+            return { 
+                url: 'http://localhost:5100/api/flight-infos',
+                params: { ...criteriaValue }
+            }
+        }, { 
+            defaultValue: [] 
+        });
+    }
+
     loadFlightById(id: number) {
         return firstValueFrom(this.http.get<Flight>(`http://localhost:5100/api/flights/${id}`));
+    }
+
+    createFlightResource(flightId: Signal<number | undefined>) {
+        return httpResource<Flight>(() => flightId() ? `http://localhost:5100/api/flights/${flightId()}` : undefined);
     }
 
     loadNextFlights() {
