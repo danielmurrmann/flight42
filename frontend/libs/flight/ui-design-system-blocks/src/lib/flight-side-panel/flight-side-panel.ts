@@ -1,13 +1,13 @@
-import { Component, computed, input, linkedSignal, output } from '@angular/core';
+import { Component, input, linkedSignal, output } from '@angular/core';
 import { FlightCard } from "@flight42/flight-ui-design-system-elements";
 import { FlightTimes, initialFlight } from '@flight42/flight-domain';
-import { FormsModule } from '@angular/forms';
 import { DateTimePicker, Button } from "@flight42/shared-ui-design-system-elements";
 import { AircraftInfoDto, AircraftCard } from '@flight42/aircraft-api';
+import { Control, form } from '@angular/forms/signals';
 
 @Component({
   selector: 'ds-flight-side-panel',
-  imports: [FormsModule, FlightCard, DateTimePicker, Button, AircraftCard],
+  imports: [Control, FlightCard, DateTimePicker, Button, AircraftCard],
   templateUrl: './flight-side-panel.html',
   styleUrl: './flight-side-panel.css',
 })
@@ -22,11 +22,9 @@ export class FlightSidePanel {
   _flightTimesTakeOff = linkedSignal(() => this.flight().times.takeOff);
   _flightTimesLanding = linkedSignal(() => this.flight().times.landing);
 
-  _modifiedFlightTimes = computed(() => ({
-    ...this.flight().times, 
-    takeOff: this._flightTimesTakeOff(),
-    landing: this._flightTimesLanding()
-  }));
+  _modifiedFlightTimes = linkedSignal(() => this.flight().times);
+
+  _flightTimesForm = form(this._modifiedFlightTimes);
   
   onSaveFlightTimes() {
     this.flightTimesChange.emit(this._modifiedFlightTimes());

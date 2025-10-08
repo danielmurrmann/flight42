@@ -9,7 +9,7 @@
   }
   <h4>Flight Times Quick Edit</h4>
   <hr>
-  <ds-date-time-picker name="takeOffDate" label="Take Off" [(ngModel)]="_flightTimesTakeOff" />
-  <ds-date-time-picker name="landingDate" label="Landing" [(ngModel)]="_flightTimesLanding" />
+  <ds-date-time-picker name="takeOffDate" label="Take Off" [control]="_flightTimesForm.takeOff" />
+  <ds-date-time-picker name="landingDate" label="Landing" [control]="_flightTimesForm.landing" />
   <ds-button label="Save" (click)="onSaveFlightTimes()" />
 </div>

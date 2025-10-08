@@ -1,6 +1,6 @@
 <div class="text-box">
     <label [for]="name()">{{label()}}</label>
-    <input [type]="type()" [id]="name()" [ariaLabel]="label()" [class.with-error]="errorHint()" [ngModel]="_value()" (ngModelChange)="_onChanged($event)" (blur)="_onBlur()">
+    <input [type]="type()" [id]="name()" [ariaLabel]="label()" [class.with-error]="errorHint()" [control]="_field">
     @if(errorHint()) {
         <p [attr.data-testid]="'error-hint-' + name()">{{errorHint()}}</p>
     }
