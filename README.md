@@ -9,3 +9,6 @@ This repository contains a sample project for Angular workshops conducted by Ang
 
 ## Chapter
 220 - Signals and Reactive Programming in Angular
+
+## Topic
+221 Fundamental usage of Signals
