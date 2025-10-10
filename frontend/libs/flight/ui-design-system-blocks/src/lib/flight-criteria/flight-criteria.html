@@ -5,5 +5,7 @@
         <ds-text-box name="to" label="To" required minlength="3" [(ngModel)]="_to"
                     [errorHint]="(form?.controls?.['to']?.touched || _to()) && form?.controls?.['to']?.invalid ? 'Needs to have at least 3 chars' : ''"/>
     </form>
+    @if(!autoSearch()) {
     <ds-button [disabled]="form?.invalid ?? true" label="Search" (tap)="_onSearch()" />
+    }
 </div>

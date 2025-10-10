@@ -2,6 +2,7 @@
   <ds-flight-criteria
     search-criteria
     [criteria]="_criteria()"
+    [autoSearch]="true"
     (searchFlights)="setCriteria($event)"
   />
   <ds-flight-list search-result [data]="_flightsResource.value()" (flightSelected)="selectFlight($event)" />

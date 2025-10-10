@@ -11,4 +11,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 220 - Signals and Reactive Programming in Angular
 
 ## Topic
-224 - Reactive Programming to the Backend with the resource APIs
+225 - RxJS Interop with Signals
