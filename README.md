@@ -11,4 +11,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 240 - State Management with NgRx Signal Store
 
 ## Topic 
-245 - Use withEntities to track a local state of a collection of entities
+246 - Use ngrx-hateoas to Load Data into the Signal Store using the HATEOAS Approach

@@ -16,7 +16,7 @@ export class FlightSearchView {
   _route = inject(ActivatedRoute);
 
   onEdit() {
-    const flight = this.store.selectedFlightResource.value();
+    const flight = this.store.selectedFlightInfo();
     if(flight) {
       this._router.navigate(['../edit', flight.id], { relativeTo: this._route });
     }
