@@ -5,7 +5,7 @@
     [autoSearch]="true"
     (searchFlights)="store.setCriteria($event)"
   />
-  <ds-flight-list search-result [data]="store.flightsResource.value()" (flightSelected)="store.selectFlight($event)" />
+  <ds-flight-list search-result [data]="store.flightEntities()" (flightSelected)="store.selectFlight($event)" />
 
   @if(store.selectedFlightResource.value(); as flight) {
     <ds-flight-side-panel side-panel [flight]="flight" [aircraft]="store.selectedAircraftResource.value()" (flightTimesChange)="store.updateSelectedFlightTimes($event)" (edit)="onEdit()"/>
