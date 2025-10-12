@@ -1,10 +1,12 @@
 import { computed, inject } from '@angular/core';
 import { AircraftServiceFacade } from '@flight42/aircraft-api';
 import { FlightCriteriaDto, FlightInfoDto, FlightService, FlightTimes, initialFlightCriteriaDto } from '@flight42/flight-domain';
-import { patchState, signalStore, withComputed, withLinkedState, withMethods, withProps, withState } from '@ngrx/signals';
+import { patchState, signalStore, withComputed, withHooks, withMethods, withProps, withState } from '@ngrx/signals';
+import { setIsLoading, withCallState } from '@flight42/shared-util';
 
 export const FlightSearchStore = signalStore(
     { providedIn: 'root' },
+    withCallState(),
     withState({
         criteria: { from: 'Munich', to: 'Berlin' } as FlightCriteriaDto,
         selectedFlightInfo: undefined as FlightInfoDto | undefined,
@@ -26,9 +28,6 @@ export const FlightSearchStore = signalStore(
             selectedAircraftResource
         };
     }),
-    withLinkedState(store => ({
-        showLoading: () => store.flightsResource.isLoading() || store.selectedFlightResource.isLoading() || store.selectedAircraftResource.isLoading()
-    })),
     withMethods(store => ({
         reset() {
             patchState(store, {
@@ -45,12 +44,17 @@ export const FlightSearchStore = signalStore(
         async updateSelectedFlightTimes(times: FlightTimes) {
             const selectedFlight = store.selectedFlightResource.value();
             if (selectedFlight) {
-                patchState(store, { showLoading: true });
+                patchState(store, setIsLoading(true));
                 const updatedSelectedFlight = { ...selectedFlight, times };
                 store.selectedFlightResource.set(updatedSelectedFlight);
                 await store._flightService.updateFlight(updatedSelectedFlight);
                 await store.flightsResource.reload();
             }
         }
-    }))
+    })),
+    withHooks({
+        onInit: store => {
+            store.connectIsLoading(computed(() => store.flightsResource.isLoading() || store.selectedFlightResource.isLoading() || store.selectedAircraftResource.isLoading()));
+        }
+    })
 );
