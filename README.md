@@ -11,4 +11,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 240 - State Management with NgRx Signal Store
 
 ## Topic 
-241 - Basic Signal Store Usage
+242 - Reactive programming within Signal Store

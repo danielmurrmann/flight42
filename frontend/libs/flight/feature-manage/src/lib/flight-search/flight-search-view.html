@@ -1,13 +1,13 @@
-<ds-search-layout title="Flight Search" (resetPage)="store.reset()">
+<ds-search-layout title="Flight Search" (resetPage)="store.reset()" [showLoading]="store.showLoading()">
   <ds-flight-criteria
     search-criteria
     [criteria]="store.criteria()"
     [autoSearch]="true"
     (searchFlights)="store.setCriteria($event)"
   />
-  <ds-flight-list search-result [data]="_flightsResource.value()" (flightSelected)="store.selectFlight($event)" />
+  <ds-flight-list search-result [data]="store.flightsResource.value()" (flightSelected)="store.selectFlight($event)" />
 
-  @if(_selectedFlightResource.value(); as flight) {
-    <ds-flight-side-panel side-panel [flight]="flight" [aircraft]="_selectedAircraftResource.value()" (flightTimesChange)="updateSelectedFlightTimes($event)" (edit)="onEdit()"/>
+  @if(store.selectedFlightResource.value(); as flight) {
+    <ds-flight-side-panel side-panel [flight]="flight" [aircraft]="store.selectedAircraftResource.value()" (flightTimesChange)="store.updateSelectedFlightTimes($event)" (edit)="onEdit()"/>
   }
 </ds-search-layout>
