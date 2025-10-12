@@ -20,6 +20,8 @@
     "@ng-icons/core": "32.1.0",
     "@ng-icons/material-icons": "32.1.0",
     "@softarc/native-federation-node": "^2.0.10",
+    "@ngrx/signals": "20.0.1",
+    "@angular-architects/ngrx-hateoas": "20.0.0",
     "axios": "^1.6.0",
     "cors": "^2.8.5",
     "body-parser": "2.2.0",

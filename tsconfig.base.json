@@ -52,7 +52,8 @@
       ],
       "@flight42/shared-ui-design-system-layouts": [
         "frontend/libs/shared/ui-design-system-layouts/src/index.ts"
-      ]
+      ],
+      "@flight42/shared-util": ["frontend/libs/shared/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

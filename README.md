@@ -8,4 +8,4 @@ This repository contains a sample project for Angular workshops conducted by Ang
 200 - Advanced Angular - Architectures for Enterprise Applications
 
 ## Chapter
-231 - Implement a Signal Based Form
+240 - State Management with NgRx Signal Store
